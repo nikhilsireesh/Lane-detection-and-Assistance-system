@@ -39,9 +39,9 @@ Render will auto-detect your `render.yaml` file, but verify these settings:
 
 **Build & Deploy:**
 - **Build Command**: `pip install -r requirements.txt`
-- **Start Command**: `gunicorn --bind 0.0.0.0:$PORT phase7_real_time_processing.scripts.web_demo:app --timeout 300 --workers 1`
+- **Start Command**: `gunicorn app:app`
 
-**Environment Variables** (Auto-configured):
+**Environment Variables** (Click "Add Environment Variable"):
 - `PYTHON_VERSION`: `3.9.18`
 - `OPENCV_AVFOUNDATION_SKIP_AUTH`: `1`
 - `FLASK_ENV`: `production`
