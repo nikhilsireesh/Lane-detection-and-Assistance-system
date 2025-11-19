@@ -1,0 +1,9 @@
+# Enhanced Validation and Testing
+tensorflow>=2.17.0
+numpy>=1.24.0
+matplotlib>=3.7.0
+opencv-python>=4.8.0
+scikit-learn>=1.3.0
+pillow>=10.0.0
+tqdm>=4.65.0
+tensorboard>=2.17.0
