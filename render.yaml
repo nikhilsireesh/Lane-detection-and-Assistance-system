@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: lane-detection-system
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --bind 0.0.0.0:$PORT phase7_real_time_processing.scripts.web_demo:app --timeout 300 --workers 1
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.18
+      - key: OPENCV_AVFOUNDATION_SKIP_AUTH
+        value: 1
+      - key: FLASK_ENV
+        value: production
+    plan: free
+    region: oregon
+    autoDeploy: false

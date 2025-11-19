@@ -1238,18 +1238,23 @@ def allowed_video_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in allowed_extensions
 
 if __name__ == '__main__':
+    import os
+    port = int(os.environ.get('PORT', 5001))
+    debug_mode = os.environ.get('FLASK_ENV', 'development') != 'production'
+    
     print("\n" + "="*60)
-    print("🚀 PHASE 7: REAL-TIME PROCESSING WEB APP - DEMO MODE")
+    print("🚀 LANE DETECTION & ASSISTANCE SYSTEM")
     print("="*60)
     print("🌐 Starting Flask web server...")
-    print("📱 Access the web interface at: http://localhost:5001")
+    if debug_mode:
+        print("📱 Access the web interface at: http://localhost:5001")
     print("🎥 Camera support: Available")
     print("📤 Upload support: Available")
-    print("⚡ Real-time processing: Demo Mode (Simulated Lanes)")
-    print("💡 Note: This is a demo version with simulated lane detection")
+    print("⚡ Real-time processing: Active")
+    print("🚗 Lane assistance: Visual alerts enabled")
     print("="*60)
     
     try:
-        app.run(debug=True, host='0.0.0.0', port=5001, threaded=True)
+        app.run(debug=debug_mode, host='0.0.0.0', port=port, threaded=True)
     except Exception as e:
         logger.error(f"Failed to start web server: {e}")

@@ -1,0 +1,1 @@
+web: gunicorn --bind 0.0.0.0:$PORT phase7_real_time_processing.scripts.web_demo:app --timeout 300 --workers 1
